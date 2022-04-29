@@ -1,1 +1,5 @@
 __pycache__
+app_old.py
+model.pkl
+vectorize.pkl
+templates/test.html

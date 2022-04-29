@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 import re
-import seaborn as sns
-import matplotlib.pyplot as plt
 import warnings
 warnings.simplefilter("ignore")
 from sklearn.naive_bayes import MultinomialNB
@@ -60,7 +58,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     text = request.form['textInput']
-    m1 = '''<div class="center"><h2>The Language detected by the model is: </h2></div><div style="border-radius: 10px;"class="container p-0 mt-8 bg-dark text-white"><p class="centerY" style="text-align:center;padding:30px 0px 30px 0px ;font-weight: bold; font-size: 30px;">'''
+    m1 = '''<div class="center"><h3>The Language detected by the model is: </h3></div><div style="border-radius: 10px;"class="container p-0 mt-8 bg-dark text-white"><p class="centerY" style="text-align:center;padding:30px 0px 30px 0px ;font-weight: bold; font-size: 30px;">'''
     m2 = '''</p></div>'''
     x = cv.transform([text]).toarray()
     lang = model.predict(x) 
