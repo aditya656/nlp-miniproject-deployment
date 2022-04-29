@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langugage Detection using NLP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+        <div class="center">
+            <h2>Langugage Detection using NLP</h2>
+
+        </div>
+    <div class="mycontainer">
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="mb-3">
+            <label for="textInput" class="form-label text-design">Text Input</label>
+            <input type="text" class="form-control" name="textInput" required="required">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       
+        <!-- <div class="center">
+            <h2>The Language detected by the model is: </h2>
+        </div>
+        <div class="container p-0 mt-2 bg-dark text-white">
+        <p class="centerY">Song 1</p>
+        </div> -->
+
+        
+        {{ prediction_text | safe}}
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>
